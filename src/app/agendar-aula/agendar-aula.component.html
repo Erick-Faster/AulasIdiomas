@@ -1,0 +1,33 @@
+<h2>Agendar Aula</h2>
+
+
+
+	{{ form.valid}}
+	{{ form.value | json}}
+
+<form #form="ngForm">
+	<div>
+		<label>Aluno Name: <br/>
+			<input type="text" name="nome" required ngModel #alunoNome placeholder="Nome do Aluno"/>
+		</label> <br/>
+		<label>Aluno Idioma: <br/> 
+			<input type="text" name="idioma" ngModel #alunoIdioma placeholder="Idioma estudado"/>
+		</label> <br/>
+		<label>Aluno Nivel: <br/>
+			<input type="text" name="nivel" maxLength="3" ngModel #alunoNivel placeholder="Nivel do Idioma"/>
+		</label> <br/>
+		<label>Aluno E-Mail: <br/>
+			<input type="text" name="email" ngModel #alunoEmail placeholder="E-Mail"/>
+		</label> <br/>
+
+		<!-- Ao clicar, passa valor, e logo apos apaga ele-->
+		<button type="button class=btn btn-primary" title="add aluno"
+		(click)="add(alunoNome.value, alunoIdioma.value, alunoNivel.value, alunoEmail.value);
+					alunoNome.value='';
+					alunoIdioma.value='';
+					alunoNivel.value='';
+					alunoEmail.value=''">
+			Add
+		</button>
+	</div>
+</form>

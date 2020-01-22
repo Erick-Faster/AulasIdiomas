@@ -1,0 +1,17 @@
+<h2>Aulas Agendadas</h2>
+
+
+<ul class="alunos">
+	<li *ngFor="let aluno of alunos" >
+		<a routerLink="/detail/{{aluno.id}}">
+			<span class="badge">{{aluno.idioma}}</span> {{aluno.nome}}
+		</a>
+		<button class="delete" title="delete aluno"
+			  (click)="delete(aluno)">x</button>
+	</li>
+</ul>
+
+
+
+
+

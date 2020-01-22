@@ -1,0 +1,16 @@
+<div *ngIf="aluno">
+	<h2>{{aluno.name | uppercase}} Details</h2>
+	<div><span>id: </span>{{aluno.id}}</div>
+	<div>
+		<label>Nome: </label>
+			<input [(ngModel)]="aluno.nome" placeholder="nome" /> <br/>
+		<label>Idioma: </label>
+			<input [(ngModel)]="aluno.idioma" placeholder="idioma" /> <br/>
+		<label>Nível: </label>
+			<input [(ngModel)]="aluno.nivel" placeholder="nivel" /> <br/>
+		<label>E-Mail: </label>
+			<input [(ngModel)]="aluno.email" placeholder="email" /> <br/>
+	</div>
+</div>
+<div><button (click)="goBack()">Go Back</button></div>
+<div><button (click)="save()">Save</button></div>

@@ -1,0 +1,46 @@
+[I]Formato de fonte para todos os outros estilos:
+
+'styles.css'
+
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+[II]font-family
+
+-> Familia de fontes.
+	-> Se houver caractere inválido, utiliza próxima fonte
+
+-> <generic-name>
+	-> Estilos de fonte
+
+	- sans-serif
+	- monospace //Mesmo diametro
+
+[III]Dimensões
+	
+	-padding -> Distancia entre o conteudo do elemento e suas bordas
+
+	/* Aplica-se à todas as bordas */
+	padding: 1em;
+
+	/* vertical | horizontal */
+	padding: 5% 10%;
+
+	/* superior | horizontal | inferior */
+	padding: 1em 2em 2em; 
+
+	/* superior | direita | inferior | esquerda */
+	padding: 2px 1em 0 1em;
+
+[IV]Pseudo-Classes
+	Caracteristicas dos links
+
+	:link - :visited - :hover - :active
+	
+	(https://developer.mozilla.org/pt-BR/docs/Web/CSS/:hover)
+
+	//Cuidado com dispositivos moveis no caso do :hover
+		->Arrastar o ponteiro do mouse vs arrastar dedão no cel.
+
+

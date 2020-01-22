@@ -1,0 +1,10 @@
+<tes-villain-detail [villain]="selectedVillain"></tes-villain-detail>
+
+<h2>Villains</h2>
+<ul class="villains">
+	<li *ngFor="let villain of villains"
+		[class.selected]="villain === selectedVillain"
+		(click)="onSelect(villain)">
+		<div><span class="badge">{{villain.id}} </span> {{villain.name}}</div>
+	</li>
+</ul>

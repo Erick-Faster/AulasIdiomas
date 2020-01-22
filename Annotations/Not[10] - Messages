@@ -1,0 +1,59 @@
+[I]Show Messages
+
+	[1]Gerar componente 'messages' no prompt
+
+	[2]Gerar service 'message' no prompt
+
+	[3]Customizar service 'message.service.ts'
+
+		import { Injectable } from '@angular/core';
+
+		@Injectable({
+		  providedIn: 'root',
+		})
+		export class MessageService {
+		  messages: string[] = [];
+
+		  add(message: string) {
+		    this.messages.push(message);
+		  }
+
+		  clear() {
+		    this.messages = [];
+		  }
+		}
+
+	[4]Implementar MessageService em 'hero.service'
+
+		import { MessageService } from './message.service';
+
+		constructor(private messageService: MessageService) { }
+
+		getHeroes(): Observable<Hero[]> {
+		  // TODO: send the message _after_ fetching the heroes
+		  this.messageService.add('HeroService: fetched heroes');
+		  return of(HEROES);
+		}
+
+	[5]Implementar MessageService em 'messages.component.ts'
+
+		import { MessageService } from '../message.service';
+
+		constructor(public messageService: MessageService) {} //deve ser public
+
+	[6]Incluir em 'messages.component.html'
+
+		<div *ngIf="messageService.messages.length">
+
+		  <h2>Messages</h2>
+		  <button class="clear"
+		          (click)="messageService.clear()">clear</button>
+		  <div *ngFor='let message of messageService.messages'> {{message}} </div>
+
+		</div>
+
+	[7]Incluir em 'app.component.html'
+
+		<tes-messages></tes-messages>
+
+	[8]Embelezar 'messages.component.css'

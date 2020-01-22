@@ -1,0 +1,8 @@
+<div *ngIf="villain">
+	<h2><span>{{villain.name | uppercase}} </span> Details</h2>
+	<div>
+		<label>
+			<input [(ngModel)]="villain.name" placeHolder="name"/>
+		</label>
+	</div>
+</div>
